@@ -2,7 +2,6 @@
   "name": "template-react-component-library",
   "version": "0.0.1",
   "description": "React Component Library",
-  "private": "true",
   "author": "myamanaka <ki.ymnka9@gmail.com>",
   "license": "ISC",
   "devDependencies": {

@@ -1,5 +1,5 @@
 {
-  "name": "@masaki-yamanaka/button",
+  "name": "@Masaki-Yamanaka/button",
   "version": "1.1.0",
   "description": "> TODO: description",
   "author": "masaki_yamanaka <ki.ymnka9@gmail.com>",
@@ -7,6 +7,9 @@
   "license": "ISC",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/Masaki-Yamanaka"
+  },
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -24,5 +27,6 @@
   },
   "bugs": {
     "url": "https://github.com/Masaki-Yamanaka/template-component-library/issues"
-  }
+  },
+  "gitHead": "8c7d84259b22c50c039de0d3064bf31c27bbd240"
 }
