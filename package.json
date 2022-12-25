@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "React Component Library",
   "author": "myamanaka <ki.ymnka9@gmail.com>",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "private": true,
   "scripts": {
     "build": "lerna run build"

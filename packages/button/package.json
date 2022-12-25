@@ -4,9 +4,9 @@
   "description": "> TODO: description",
   "author": "masaki_yamanaka <ki.ymnka9@gmail.com>",
   "homepage": "https://github.com/Masaki-Yamanaka/template-component-library#readme",
-  "license": "ISC",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "license": "UNLICENSED",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/Masaki-Yamanaka"
   },
