@@ -35,6 +35,6 @@ jobs:
       - name: Build packages
         run: yarn build
 
-      - run: npx lerna publish --conventional-commits --yes --registry=https://npm.pkg.github.com --create-release github
+      - run: npx lerna publish --conventional-commits --yes --registry=https://npm.pkg.github.com
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
