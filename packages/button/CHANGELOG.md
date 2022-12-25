@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.2.1 (2022-12-25)
+
+
+### Bug Fixes
+
+* 🐛 add type ([1c042da](https://github.com/Masaki-Yamanaka/template-component-library/commit/1c042da58c3aebb487407b41e6787be8db4c8926))
+
+
+
+
+
 # 1.2.0 (2022-12-15)
 
 
