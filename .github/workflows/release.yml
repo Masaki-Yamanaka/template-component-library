@@ -3,6 +3,10 @@ name: Release Packages
 on:
   workflow_dispatch:
 
+env:
+  BASE_BRANCH: main
+  TITLE: Test
+
 jobs:
   release-please:
     runs-on: ubuntu-latest
@@ -46,6 +50,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Create release pr
-        run: gh pr create -B ${{ steps.check_pr.outputs.base_branch }} -t ${{ steps.check_pr.outputs.pr_title }} -b ""
+        run: gh pr create -B ${{ env.BASE_BRANCH }} -t ${{ env.TITLE }} -b ""
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
