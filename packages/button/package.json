@@ -20,7 +20,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Masaki-Yamanaka/template-component-library.git"
+    "url": "git+https://github.com/Masaki-Yamanaka/template-component-library.git",
+    "directory": "packages/button"
   },
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs"
