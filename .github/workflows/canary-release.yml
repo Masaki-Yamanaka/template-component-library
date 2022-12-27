@@ -20,7 +20,7 @@ jobs:
               repo: context.repo.repo,
               pull_number: context.issue.number
             }
-            const result = await git(request)
+            const result = await github.pulls.get(request)
             return result.data
 
       - name: checkout
