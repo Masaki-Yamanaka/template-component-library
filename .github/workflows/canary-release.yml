@@ -16,6 +16,7 @@ jobs:
         with:
           github-token: ${{ secrets.GH_TOKEN }}
           script: |
+            const { GitHub } = require('@actions/github')
             const octokit = new GitHub()
             const request = {
               owner: context.repo.owner,
