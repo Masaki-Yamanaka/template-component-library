@@ -20,10 +20,8 @@ jobs:
               repo: context.repo.repo,
               pull_number: context.issue.number
             }
-            github.log(`Getting PR #${request.pull_number} from ${request.owner}/${request.repo}`)
             try {
               const result = await github.pulls.get(request)
-              github.log(`Got PR: ${JSON.stringify(result.data)}`)
               return result.data
             } catch (err) {
               github.setFailed(`Request failed with error ${err}`)
