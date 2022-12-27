@@ -16,7 +16,7 @@ jobs:
       github.event_name == 'issue_comment' && startsWith(github.event.comment.body, '/canary-release')
     steps:
       - name: get pr information
-        uses: actions/github-script@v6
+        uses: actions/github-script@v4
         id: pr
         with:
           script: |
@@ -52,7 +52,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@v4
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
