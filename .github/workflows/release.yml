@@ -5,7 +5,7 @@ on:
 
 env:
   BASE_BRANCH: main
-  TITLE: 'Test PR'
+  TITLE: Release
 
 jobs:
   release-please:
