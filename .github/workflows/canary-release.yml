@@ -14,7 +14,9 @@ jobs:
         uses: actions/github-script@v6
         id: pr
         with:
+          github-token: ${{ secrets.GH_TOKEN }}
           script: |
+            const octokit = new GitHub()
             const request = {
               owner: context.repo.owner,
               repo: context.repo.repo,
