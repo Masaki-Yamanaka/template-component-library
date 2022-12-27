@@ -20,12 +20,9 @@ jobs:
               repo: context.repo.repo,
               pull_number: context.issue.number
             }
-            try {
-              const result = await github.pulls.get(request)
-              return result.data
-            } catch (err) {
-              github.setFailed(`Request failed with error ${err}`)
-            }
+            const result = await git(request)
+            return result.data
+
       - name: checkout
         uses: actions/checkout@v3
         with:
