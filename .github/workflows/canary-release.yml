@@ -10,7 +10,7 @@ jobs:
     if: |
       github.event_name == 'issue_comment' && startsWith(github.event.comment.body, '/canary-release')
     steps:
-       - name: get upstream branch
+      - name: get upstream branch
         id: upstreambranch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
