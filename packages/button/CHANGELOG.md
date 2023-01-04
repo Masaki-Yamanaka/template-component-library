@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.9](https://github.com/Masaki-Yamanaka/template-component-library/compare/@Masaki-Yamanaka/button@1.3.8...@Masaki-Yamanaka/button@1.3.9) (2022-12-27)
+
+**Note:** Version bump only for package @Masaki-Yamanaka/button
+
+
+
+
+
+## [1.3.8](https://github.com/Masaki-Yamanaka/template-component-library/compare/@Masaki-Yamanaka/button@1.3.7...@Masaki-Yamanaka/button@1.3.8) (2022-12-27)
+
+**Note:** Version bump only for package @Masaki-Yamanaka/button
+
+
+
+
+
 ## [1.3.7](https://github.com/Masaki-Yamanaka/template-component-library/compare/@Masaki-Yamanaka/button@1.3.6...@Masaki-Yamanaka/button@1.3.7) (2022-12-26)
 
 **Note:** Version bump only for package @Masaki-Yamanaka/button
