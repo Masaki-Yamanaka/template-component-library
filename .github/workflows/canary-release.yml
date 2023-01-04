@@ -10,11 +10,18 @@ jobs:
     if: |
       github.event_name == 'issue_comment' && startsWith(github.event.comment.body, '/canary-release')
     steps:
+       - name: get upstream branch
+        id: upstreambranch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "::set-output name=branchname::$(curl -H "Authorization: token ${GITHUB_TOKEN}" ${{ github.event.issue.pull_request.url }} | jq '.head.ref' | sed 's/\"//g')"
+
       - name: checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: '0'
-
+          ref: ${{ steps.upstreambranch.outputs.branchname }}
+          fetch-depth: 0
       - name: setup Node
         uses: actions/setup-node@v3
         with:
