@@ -15,7 +15,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "::set-output name=branchname::$(curl -H "Authorization: token ${GITHUB_TOKEN}" ${{ github.event.issue.pull_request.url }} | jq '.head.ref' | sed 's/\"//g')"
+          echo "{branchname}={$(curl -H "Authorization: token ${GITHUB_TOKEN}" ${{ github.event.issue.pull_request.url }} | jq '.head.ref' | sed 's/\"//g')}" >> $GITHUB_OUTPUT
 
       - name: checkout
         uses: actions/checkout@v3
@@ -41,6 +41,9 @@ jobs:
 
       - name: Install packages
         run: yarn install --frozen-lockfile
+
+      - name: Build Package
+        run: yarn build
 
       - name: Publish
         run: yarn lerna publish --canary --preid next --dist-tag next --force-publish='*' --no-push --no-git-tag-version --yes --registry=https://npm.pkg.github.com
