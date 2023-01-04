@@ -10,29 +10,17 @@ jobs:
     if: |
       github.event_name == 'issue_comment' && startsWith(github.event.comment.body, '/canary-release')
     steps:
-      - name: get pr information
-        uses: actions/github-script@v4
-        id: pr
-        with:
-          script: |
-            const request = {
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.issue.number
-            }
-            core.info(`Getting PR #${request.pull_number} from ${request.owner}/${request.repo}`)
-            try {
-              const result = await github.pulls.get(request)
-              core.info(`Got PR: ${JSON.stringify(result.data)}`)
-              return result.data
-            } catch (err) {
-              core.setFailed(`Request failed with error ${err}`)
-            }
+       - name: get upstream branch
+        id: upstreambranch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "::set-output name=branchname::$(curl -H "Authorization: token ${GITHUB_TOKEN}" ${{ github.event.issue.pull_request.url }} | jq '.head.ref' | sed 's/\"//g')"
+
       - name: checkout
         uses: actions/checkout@v3
         with:
-          ref: ${{ fromJSON(steps.pr.outputs.result).head.ref }}
-          repository: ${{ fromJSON(steps.pr.outputs.result).head.repo.full_name }}
+          ref: ${{ steps.upstreambranch.outputs.branchname }}
           fetch-depth: 0
       - name: setup Node
         uses: actions/setup-node@v3
